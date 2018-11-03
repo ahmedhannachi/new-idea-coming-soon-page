@@ -14,8 +14,17 @@ body {
 .header {
     height: 95vh;
     position: relative;
-    background: radial-gradient(#5f5f61,#5f5f61,#3d393a);
-    clip-path: polygon(100% 0, 100% 80%, 85% 100%, 0 100%, 0 0);
+    background: radial-gradient(#5f5f61, #5f5f61, #3d393a);
+}
+
+.header-shadow {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
 }
 
 .logo-box {
@@ -117,6 +126,7 @@ img.developer {
     left: 30%;
     width: 25vw;
     height: 60vh;
+    z-index: 1;
 }
 
 .bulb {
@@ -129,8 +139,12 @@ img.developer {
     background-size: contain;
 }
 
-.bulb:hover {
+.bulb-box:hover .bulb{
     content: "";
     background: url("../img/bulb-on.png") no-repeat top;
-    background-size: contain
+    background-size: contain;
+}
+
+.bulb-box:hover + .header-shadow{
+    opacity: 0;
 }
